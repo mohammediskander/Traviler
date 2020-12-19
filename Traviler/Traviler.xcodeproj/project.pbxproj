@@ -1,0 +1,517 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2C10C0E6258E122200FD6984 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10C0E5258E122200FD6984 /* AppDelegate.swift */; };
+		2C10C0E8258E122200FD6984 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10C0E7258E122200FD6984 /* SceneDelegate.swift */; };
+		2C10C0EF258E122200FD6984 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C10C0EE258E122200FD6984 /* Assets.xcassets */; };
+		2C10C0F2258E122200FD6984 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C10C0F0258E122200FD6984 /* LaunchScreen.storyboard */; };
+		2C10C0FD258E122200FD6984 /* TravilerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10C0FC258E122200FD6984 /* TravilerTests.swift */; };
+		2C10C132258E15B200FD6984 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10C131258E15B200FD6984 /* HomeController.swift */; };
+		2C10C138258E15CE00FD6984 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10C137258E15CE00FD6984 /* HomeView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2C10C0F9258E122200FD6984 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C10C0DA258E122200FD6984 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2C10C0E1258E122200FD6984;
+			remoteInfo = Traviler;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2C10C0E2258E122200FD6984 /* Traviler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Traviler.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C10C0E5258E122200FD6984 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2C10C0E7258E122200FD6984 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		2C10C0EE258E122200FD6984 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2C10C0F1258E122200FD6984 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2C10C0F3258E122200FD6984 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C10C0F8258E122200FD6984 /* TravilerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TravilerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C10C0FC258E122200FD6984 /* TravilerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravilerTests.swift; sourceTree = "<group>"; };
+		2C10C0FE258E122200FD6984 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C10C131258E15B200FD6984 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		2C10C137258E15CE00FD6984 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2C10C0DF258E122200FD6984 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C10C0F5258E122200FD6984 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2C10C0D9258E122200FD6984 = {
+			isa = PBXGroup;
+			children = (
+				2C10C0E4258E122200FD6984 /* Traviler */,
+				2C10C0FB258E122200FD6984 /* TravilerTests */,
+				2C10C0E3258E122200FD6984 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2C10C0E3258E122200FD6984 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2C10C0E2258E122200FD6984 /* Traviler.app */,
+				2C10C0F8258E122200FD6984 /* TravilerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2C10C0E4258E122200FD6984 /* Traviler */ = {
+			isa = PBXGroup;
+			children = (
+				2C10C130258E159D00FD6984 /* DataSources */,
+				2C10C12F258E158800FD6984 /* Extensions */,
+				2C10C12E258E158200FD6984 /* Utilites */,
+				2C10C12D258E157C00FD6984 /* Models */,
+				2C10C12A258E157700FD6984 /* Views */,
+				2C10C121258E156000FD6984 /* Controllers */,
+				2C10C0E5258E122200FD6984 /* AppDelegate.swift */,
+				2C10C0E7258E122200FD6984 /* SceneDelegate.swift */,
+				2C10C0EE258E122200FD6984 /* Assets.xcassets */,
+				2C10C0F0258E122200FD6984 /* LaunchScreen.storyboard */,
+				2C10C0F3258E122200FD6984 /* Info.plist */,
+			);
+			path = Traviler;
+			sourceTree = "<group>";
+		};
+		2C10C0FB258E122200FD6984 /* TravilerTests */ = {
+			isa = PBXGroup;
+			children = (
+				2C10C0FC258E122200FD6984 /* TravilerTests.swift */,
+				2C10C0FE258E122200FD6984 /* Info.plist */,
+			);
+			path = TravilerTests;
+			sourceTree = "<group>";
+		};
+		2C10C121258E156000FD6984 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2C10C131258E15B200FD6984 /* HomeController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		2C10C12A258E157700FD6984 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2C10C137258E15CE00FD6984 /* HomeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2C10C12D258E157C00FD6984 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2C10C12E258E158200FD6984 /* Utilites */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilites;
+			sourceTree = "<group>";
+		};
+		2C10C12F258E158800FD6984 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2C10C130258E159D00FD6984 /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataSources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2C10C0E1258E122200FD6984 /* Traviler */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C10C10C258E122300FD6984 /* Build configuration list for PBXNativeTarget "Traviler" */;
+			buildPhases = (
+				2C10C0DE258E122200FD6984 /* Sources */,
+				2C10C0DF258E122200FD6984 /* Frameworks */,
+				2C10C0E0258E122200FD6984 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Traviler;
+			productName = Traviler;
+			productReference = 2C10C0E2258E122200FD6984 /* Traviler.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2C10C0F7258E122200FD6984 /* TravilerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C10C10F258E122300FD6984 /* Build configuration list for PBXNativeTarget "TravilerTests" */;
+			buildPhases = (
+				2C10C0F4258E122200FD6984 /* Sources */,
+				2C10C0F5258E122200FD6984 /* Frameworks */,
+				2C10C0F6258E122200FD6984 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2C10C0FA258E122200FD6984 /* PBXTargetDependency */,
+			);
+			name = TravilerTests;
+			productName = TravilerTests;
+			productReference = 2C10C0F8258E122200FD6984 /* TravilerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2C10C0DA258E122200FD6984 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1220;
+				LastUpgradeCheck = 1220;
+				TargetAttributes = {
+					2C10C0E1258E122200FD6984 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					2C10C0F7258E122200FD6984 = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = 2C10C0E1258E122200FD6984;
+					};
+				};
+			};
+			buildConfigurationList = 2C10C0DD258E122200FD6984 /* Build configuration list for PBXProject "Traviler" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2C10C0D9258E122200FD6984;
+			productRefGroup = 2C10C0E3258E122200FD6984 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2C10C0E1258E122200FD6984 /* Traviler */,
+				2C10C0F7258E122200FD6984 /* TravilerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2C10C0E0258E122200FD6984 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C10C0F2258E122200FD6984 /* LaunchScreen.storyboard in Resources */,
+				2C10C0EF258E122200FD6984 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C10C0F6258E122200FD6984 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2C10C0DE258E122200FD6984 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C10C0E6258E122200FD6984 /* AppDelegate.swift in Sources */,
+				2C10C138258E15CE00FD6984 /* HomeView.swift in Sources */,
+				2C10C0E8258E122200FD6984 /* SceneDelegate.swift in Sources */,
+				2C10C132258E15B200FD6984 /* HomeController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C10C0F4258E122200FD6984 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C10C0FD258E122200FD6984 /* TravilerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2C10C0FA258E122200FD6984 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2C10C0E1258E122200FD6984 /* Traviler */;
+			targetProxy = 2C10C0F9258E122200FD6984 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2C10C0F0258E122200FD6984 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2C10C0F1258E122200FD6984 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2C10C10A258E122300FD6984 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2C10C10B258E122300FD6984 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2C10C10D258E122300FD6984 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DK64384C46;
+				INFOPLIST_FILE = Traviler/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Brackets.Traviler;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2C10C10E258E122300FD6984 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DK64384C46;
+				INFOPLIST_FILE = Traviler/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Brackets.Traviler;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2C10C110258E122300FD6984 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DK64384C46;
+				INFOPLIST_FILE = TravilerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Brackets.TravilerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Traviler.app/Traviler";
+			};
+			name = Debug;
+		};
+		2C10C111258E122300FD6984 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DK64384C46;
+				INFOPLIST_FILE = TravilerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Brackets.TravilerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Traviler.app/Traviler";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2C10C0DD258E122200FD6984 /* Build configuration list for PBXProject "Traviler" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C10C10A258E122300FD6984 /* Debug */,
+				2C10C10B258E122300FD6984 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2C10C10C258E122300FD6984 /* Build configuration list for PBXNativeTarget "Traviler" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C10C10D258E122300FD6984 /* Debug */,
+				2C10C10E258E122300FD6984 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2C10C10F258E122300FD6984 /* Build configuration list for PBXNativeTarget "TravilerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C10C110258E122300FD6984 /* Debug */,
+				2C10C111258E122300FD6984 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2C10C0DA258E122200FD6984 /* Project object */;
+}
