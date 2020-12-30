@@ -79,12 +79,14 @@
 		2C10C0E4258E122200FD6984 /* Traviler */ = {
 			isa = PBXGroup;
 			children = (
-				2C10C130258E159D00FD6984 /* DataSources */,
-				2C10C12F258E158800FD6984 /* Extensions */,
-				2C10C12E258E158200FD6984 /* Utilites */,
-				2C10C12D258E157C00FD6984 /* Models */,
-				2C10C12A258E157700FD6984 /* Views */,
+				2C61B029259C83ED00E5B779 /* Assets */,
+				2C61B02A259C83F300E5B779 /* Components */,
 				2C10C121258E156000FD6984 /* Controllers */,
+				2C61B02B259C83FA00E5B779 /* DataSources */,
+				2C61B02C259C840300E5B779 /* Extensions */,
+				2C61B02D259C840A00E5B779 /* Models */,
+				2C61B028259C83E700E5B779 /* Routers */,
+				2C10C12A258E157700FD6984 /* Views */,
 				2C10C0E5258E122200FD6984 /* AppDelegate.swift */,
 				2C10C0E7258E122200FD6984 /* SceneDelegate.swift */,
 				2C10C0EE258E122200FD6984 /* Assets.xcassets */,
@@ -106,7 +108,12 @@
 		2C10C121258E156000FD6984 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				2C10C131258E15B200FD6984 /* HomeController.swift */,
+				2C61B037259C84D200E5B779 /* Common */,
+				2C61B036259C84CB00E5B779 /* Discover */,
+				2C61B035259C84C300E5B779 /* Favourites */,
+				2C61B034259C84BC00E5B779 /* VisitsList */,
+				2C61B033259C84B500E5B779 /* Settings */,
+				2C61B026259C83C400E5B779 /* Home */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -114,37 +121,142 @@
 		2C10C12A258E157700FD6984 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				2C10C137258E15CE00FD6984 /* HomeView.swift */,
+				2C61B032259C84A000E5B779 /* Common */,
+				2C61B031259C849700E5B779 /* Discover */,
+				2C61B030259C848D00E5B779 /* Favourties */,
+				2C61B02F259C848300E5B779 /* VisitsList */,
+				2C61B02E259C847500E5B779 /* Settings */,
+				2C61B027259C83D100E5B779 /* Home */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		2C10C12D258E157C00FD6984 /* Models */ = {
+		2C61B026259C83C400E5B779 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				2C10C131258E15B200FD6984 /* HomeController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		2C61B027259C83D100E5B779 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				2C10C137258E15CE00FD6984 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		2C61B028259C83E700E5B779 /* Routers */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Models;
+			path = Routers;
 			sourceTree = "<group>";
 		};
-		2C10C12E258E158200FD6984 /* Utilites */ = {
+		2C61B029259C83ED00E5B779 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Utilites;
+			path = Assets;
 			sourceTree = "<group>";
 		};
-		2C10C12F258E158800FD6984 /* Extensions */ = {
+		2C61B02A259C83F300E5B779 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		2C61B02B259C83FA00E5B779 /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataSources;
+			sourceTree = "<group>";
+		};
+		2C61B02C259C840300E5B779 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		2C10C130258E159D00FD6984 /* DataSources */ = {
+		2C61B02D259C840A00E5B779 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = DataSources;
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2C61B02E259C847500E5B779 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		2C61B02F259C848300E5B779 /* VisitsList */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VisitsList;
+			sourceTree = "<group>";
+		};
+		2C61B030259C848D00E5B779 /* Favourties */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Favourties;
+			sourceTree = "<group>";
+		};
+		2C61B031259C849700E5B779 /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
+		2C61B032259C84A000E5B779 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		2C61B033259C84B500E5B779 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		2C61B034259C84BC00E5B779 /* VisitsList */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VisitsList;
+			sourceTree = "<group>";
+		};
+		2C61B035259C84C300E5B779 /* Favourites */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Favourites;
+			sourceTree = "<group>";
+		};
+		2C61B036259C84CB00E5B779 /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
+		2C61B037259C84D200E5B779 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
