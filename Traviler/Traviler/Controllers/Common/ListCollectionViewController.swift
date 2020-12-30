@@ -28,7 +28,6 @@ class ListCollectionViewController: UIViewController {
         
         collectionView.register(ListCell.self, forCellWithReuseIdentifier: CellIdentifier.default.rawValue)
         collectionView.dataSource = self
-//        collectionView.delegate = CountryDataSource.shared
         collectionView.delegate = self
     }
     
@@ -88,7 +87,7 @@ extension ListCollectionViewController: UICollectionViewDelegate {
             let weatherOperation = OperationQueue()
             weatherOperation.addOperation {
                 URLSession.shared.fetch(
-                    WeatherAPI.getCurrentWeather(at:
+                    WeatherRouter.getCurrentWeather(at:
                                                     CLLocationCoordinate2D(latitude: business.coordinates!.latitude!, longitude: business.coordinates!.longitude!)
                     ),
                     decode: WeatherResponse.self
@@ -113,13 +112,8 @@ extension ListCollectionViewController: UICollectionViewDelegate {
             image in
             
             guard let cell = cell as? ListCell else { return }
-//            switch image {
-//            case .success(let image):
-                cell.update(displaying: image)
-//            case .failure(let error):
-//                cell.update(displaying: nil)
-//                print("ERR::\(error)")
-//            }
+
+            cell.update(displaying: image)
         }
     }
     

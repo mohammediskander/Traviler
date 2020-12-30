@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 protocol BusinessViewDelegate: AnyObject {
     func handleOptionButtonTapped(_ sender: UIButton)
@@ -26,7 +27,7 @@ class BusinessView: UIView {
     private var ratingLabel: Text?
     private var distanceLabel: Text?
     
-    var busniess: Business? {
+    var business: Business? {
         didSet {
             self.setupView()
         }
@@ -41,12 +42,21 @@ class BusinessView: UIView {
         self.swipeIndicator = UIView()
         
         // create all views and add it to superview
-        self.titleLabel = Text(self.busniess!.name!, size: 28, weight: .bold)
-        self.categoryLabel = Text(self.busniess!.categories?.first?.title! ?? "Unspecified", color: Style.Colors.secondayColor)
-        self.priceLabel = Text(String.repeat("$", times: UInt(self.busniess!.price?.count ?? 4)), color: Style.Colors.secondayColor)
-        self.priceDisabledLabel = Text(String.repeat("$", times: 4 - UInt(self.busniess!.price?.count ?? 4)), color: Style.Colors.disabledColor)
-        self.ratingLabel = Text(String(self.busniess!.rating!), color: Style.Colors.goldColor, weight: .black)
-        self.distanceLabel = Text("12 km away", color: Style.Colors.secondayColor)
+        self.titleLabel = Text(self.business!.name!, size: 28, weight: .bold)
+        self.categoryLabel = Text(self.business!.categories?.first?.title! ?? "Unspecified", color: Style.Colors.secondayColor)
+        self.priceLabel = Text(String.repeat("$", times: UInt(self.business!.price?.count ?? 4)), color: Style.Colors.secondayColor)
+        self.priceDisabledLabel = Text(String.repeat("$", times: 4 - UInt(self.business!.price?.count ?? 4)), color: Style.Colors.disabledColor)
+        self.ratingLabel = Text(String(self.business!.rating!), color: Style.Colors.goldColor, weight: .black)
+        
+        if let latittude = self.business?.coordinates!.latitude, let longitude = self.business?.coordinates!.longitude {
+            let userLatitude = UserDefaults.standard.double(forKey: "user.currentlocation.latitude")
+            let userLongitude = UserDefaults.standard.double(forKey: "user.currentlocation.longitude")
+            let distance = CLLocation(latitude: latittude, longitude: longitude).distance(from: CLLocation(latitude: userLatitude, longitude: userLongitude))
+            self.distanceLabel = Text("\(String(format: "%.1f", distance.rounded(.up) / 1000)) km away", color: Style.Colors.secondayColor)
+        } else {
+            self.distanceLabel = Text("\(String(format: "%.1f", 0.rounded(.up) / 1000)) km away", color: Style.Colors.secondayColor)
+        }
+        
         self.optionButton = UIButton(type: .custom)
         
         self.optionButton?.addTarget(nil, action: #selector(self.handleOptionButtonTapped(_:)), for: .touchUpInside)

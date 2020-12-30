@@ -34,12 +34,6 @@ class DiscoverMapController: UIViewController, MKMapViewDelegate {
         }
     }
     
-//    func mapViewDidChangeVisibleRegion(_ mapView: MKMapView) {
-//        if let mapView = self.view as? MapView {
-//            mapView.searchTextfield?.resignFirstResponder()
-//        }
-//    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         

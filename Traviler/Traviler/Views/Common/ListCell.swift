@@ -138,7 +138,9 @@ class ListCell: UICollectionViewCell {
         self.weatherImageView = UIImageView()
         
         if let latittude = self.business!.coordinates!.latitude, let longitude = self.business!.coordinates!.longitude {
-            let distance = CLLocation(latitude: latittude, longitude: longitude).distance(from: CLLocation(latitude: 34.05223, longitude: -118.24368))
+            let userLatitude = UserDefaults.standard.double(forKey: "user.currentlocation.latitude")
+            let userLongitude = UserDefaults.standard.double(forKey: "user.currentlocation.longitude")
+            let distance = CLLocation(latitude: latittude, longitude: longitude).distance(from: CLLocation(latitude: userLatitude, longitude: userLongitude))
             self.distance = Text("\(String(format: "%.1f", distance.rounded(.up) / 1000)) km away", color: Style.Colors.captionColor, size: 12)
         } else {
             self.distance = Text("\(String(format: "%.1f", 0.rounded(.up) / 1000)) km away", color: Style.Colors.captionColor, size: 12)

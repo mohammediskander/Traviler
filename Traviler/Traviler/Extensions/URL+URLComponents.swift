@@ -1,6 +1,6 @@
 //
 //  URL+URLComponents.swift
-//  Flodel
+//  Traviler
 //
 //  Created by Mohammed Iskandar on 02/12/2020.
 //

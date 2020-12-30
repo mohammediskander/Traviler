@@ -16,7 +16,6 @@ enum FavourtiesCellIdentifier: String {
 class FavourtiesCollectionController: UIViewController {
     
     var collectionView: UICollectionView!
-//    var dataSource: [Business] = BusinessDataStore.shared?.dumpData["favourits"] ?? []
     
     override func loadView() {
         let listCollectionView = ListCollectionView()
@@ -28,7 +27,6 @@ class FavourtiesCollectionController: UIViewController {
         
         collectionView.register(ListCell.self, forCellWithReuseIdentifier: FavourtiesCellIdentifier.default.rawValue)
         collectionView.dataSource = self
-//        collectionView.delegate = CountryDataSource.shared
         collectionView.delegate = self
     }
     
@@ -88,7 +86,7 @@ extension FavourtiesCollectionController: UICollectionViewDelegate {
             let weatherOperation = OperationQueue()
             weatherOperation.addOperation {
                 URLSession.shared.fetch(
-                    WeatherAPI.getCurrentWeather(at:
+                    WeatherRouter.getCurrentWeather(at:
                                                     CLLocationCoordinate2D(latitude: business.coordinates!.latitude!, longitude: business.coordinates!.longitude!)
                     ),
                     decode: WeatherResponse.self
@@ -113,13 +111,7 @@ extension FavourtiesCollectionController: UICollectionViewDelegate {
             image in
             
             guard let cell = cell as? ListCell else { return }
-//            switch imageResult {
-//            case .success(let image):
-                cell.update(displaying: image)
-//            case .failure(let error):
-//                cell.update(displaying: nil)
-//                print("ERR::\(error)")
-//            }
+            cell.update(displaying: image)
         }
     }
     

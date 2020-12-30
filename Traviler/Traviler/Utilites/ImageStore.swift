@@ -17,11 +17,9 @@ class ImageStore {
     func setImage(_ image: UIImage, forKey key: String) {
         cache.setObject(image, forKey: key as NSString)
         
-        // Create full URL for image
         let url = imageURL(forKey: key)
         
         if let data = image.toJPEG(with: .highQuality) {
-            // Write it to full URL
             try? data.write(to: url)
         }
     }
@@ -114,7 +112,7 @@ class ImageStore {
             exit(0)
         }
         catch {
-            print(error)
+            print("ERR::\(error)")
         }
     }
 }

@@ -29,13 +29,9 @@ class AutoCompleteController: UIViewController {
     private let autoCompleteCell = "autoCompleteCell"
     
     override func loadView() {
-//        self.tableView =
-        
         self.view = AutoCompleteView(tableView)
         tableView.allowsSelection = true
-//        tableView.register(UITableViewCell.self, forCellWithReuseIdentifier: self.autoCompleteCell)
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: self.autoCompleteCell)
-//        tableView.alwaysBounceHorizontal = false
         self.tableView.separatorStyle = .none
         self.tableView.delegate = self
         self.tableView.dataSource = self

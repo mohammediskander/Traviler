@@ -32,9 +32,7 @@ class BusinessDataStore: NSObject, DataSource {
     
     var data: [DataType] = [] {
         didSet {
-            print("Reloading data?")
             self.delegate?.handleDataSource(self.data, didUpdatFrom: oldValue)
-            
             self.dumpData["recommended"] = self.data
         }
     }
@@ -42,11 +40,7 @@ class BusinessDataStore: NSObject, DataSource {
     var fetcher: ImageFetcher = ImageFetcher()
     var requests: [IndexPath : ImageFetchingRequest] = [:]
     
-    var sectionData: [String: [DataType]] = [:] {
-        didSet {
-//            self.delegate?.handleDataSource(self.data, didUpdatFrom: nil)
-        }
-    }
+    var sectionData: [String: [DataType]] = [:]
     
     var dumpData: [String: [DataType]] = [:] {
         didSet {
@@ -91,15 +85,11 @@ class BusinessDataStore: NSObject, DataSource {
         self.fetch(self.endpoint) {
             [weak self] result in
             
-            
-            print(try? endpoint.asURLRequest().queryItems)
-            
             switch result {
             case .success(let yelpResponse):
                 
                 guard let self = self else { return }
                 
-                print("Got yelp response, setting it to data..", yelpResponse.businesses?.count)
                 guard let businesses = yelpResponse.businesses else { return }
                 
                 
@@ -116,15 +106,10 @@ class BusinessDataStore: NSObject, DataSource {
     
     func fetch(imageFor business: Business, atIndexPath indexPath: IndexPath, completion handler: @escaping (UIImage) -> Void) {
         
-//        print(business.id, self.imageStore?.image(forKey: business.id!))
         if let businessId = business.id, let image = self.imageStore?.image(forKey: businessId) {
-            print("image: \(business.name!) is cached.")
             handler(image)
             return
         }
-//        print("Here?")
-        // Second, check to see if we've already requested an image for this cell
-        // and if so, just upgrade its priority
         if let request = requests[indexPath] {
             request.priority = .high
 
@@ -168,14 +153,15 @@ class BusinessDataStore: NSObject, DataSource {
             }
         }
         OperationQueue.main.addOperation {
-            print("Addeing new request", request)
             self.requests[indexPath] = request
         }
     }
     
     func fetch(for category: YelpCategory, completion hander: @escaping (Result<DecodeType, Error>) -> Void) {
         if !self.sectionData.contains(where: { $0.key == category.alias! }) {
-            self.fetch(YelpAPI.getBusinessSearch(at: CLLocationCoordinate2D(latitude: 34.05223, longitude: -118.24368), categories: [category.alias!]), completion: hander)
+            let latitude = UserDefaults.standard.double(forKey: "user.currentlocation.latitude")
+            let longitude = UserDefaults.standard.double(forKey: "user.currentlocation.longitude")
+            self.fetch(YelpRouter.getBusinessSearch(at: CLLocationCoordinate2D(latitude: latitude, longitude: longitude), categories: [category.alias!]), completion: hander)
         }
     }
 }

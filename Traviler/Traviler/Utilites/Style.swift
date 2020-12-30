@@ -23,7 +23,6 @@ public enum DefaultStyle {
             }
         }()
         public static var secondaryBackgroundColor: UIColor = {
-//            "#F2F2F2"
             return UIColor { (UITraitCollection: UITraitCollection) -> UIColor in
                 if UITraitCollection.userInterfaceStyle == .dark {
                     /// Return the color for Dark Mode
