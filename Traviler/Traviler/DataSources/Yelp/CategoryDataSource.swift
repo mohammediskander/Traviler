@@ -27,7 +27,6 @@ class CategoriesDataSource: NSObject, DataSource {
     
     var data: [DataType] = [] {
         didSet {
-//            self.dataSource(data, didUpdateFrom: oldValue)
             self.delegate?.handleDataSource(data, didUpdatFrom: oldValue)
             try? self.jsonIO.write(self.data, to: self.fileURL)
         }
@@ -36,7 +35,7 @@ class CategoriesDataSource: NSObject, DataSource {
     var fetcher: ImageFetcher = ImageFetcher()
     var requests: [IndexPath : ImageFetchingRequest] = [:]
     
-    var endpoint: Router = FoursquareRouter.getVenueCategoires
+    var endpoint: Router!
     
     lazy var fileURL: URL = {
         return BusinessDataStore.documentDirectoryURL!.appendingPathComponent(self.dataArchiveFileName)

@@ -16,7 +16,6 @@ class FavouritesController: UIViewController {
         
         if let listView = view as? ListView {
             let collectionView = FavourtiesCollectionController()
-//            collectionView.dataSource = self.dataSource
             self.addChild(collectionView)
             
             listView.collectionView = collectionView.view

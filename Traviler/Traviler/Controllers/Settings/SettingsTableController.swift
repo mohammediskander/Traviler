@@ -23,7 +23,6 @@ class SettingsTableController: UIViewController {
         
         self.tableView = UITableView(frame: self.view.bounds, style: .insetGrouped)
         settingsTableView.tableView = tableView
-//        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: self.defaultCell)
         
         self.tableView.delegate = self
         self.tableView.dataSource = self

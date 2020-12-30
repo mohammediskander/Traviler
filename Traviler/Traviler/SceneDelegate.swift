@@ -1,16 +1,10 @@
-//
-//  SceneDelegate.swift
-//  Traviler
-//
-//  Created by Mohammed Iskandar on 19/12/2020.
-//
-
 import UIKit
+import CoreLocation
 
-class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+class SceneDelegate: UIResponder, UIWindowSceneDelegate, CLLocationManagerDelegate {
 
     var window: UIWindow?
-
+    let locationManager = CLLocationManager()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -18,11 +12,42 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
         
+        // Ask for Authorisation from the User.
+        self.locationManager.requestAlwaysAuthorization()
+
+        // For use in foreground
+        self.locationManager.requestWhenInUseAuthorization()
+
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
+        
+        let userLatitude = UserDefaults.standard.double(forKey: "user.currentlocation.latitude")
+        let userLongitude = UserDefaults.standard.double(forKey: "user.currentlocation.longitude")
+        
+        let _ = CityDataSource.shared
+        let businessDataSource = BusinessDataStore(forEndpoint: YelpRouter.getBusinessSearch(at: CLLocationCoordinate2D(latitude: userLatitude, longitude: userLongitude), term: "food"))
+        let categoriesDataSource = CategoriesDataSource(forEndpoint: YelpRouter.getAllCategories)
+
+        BusinessDataStore.shared = businessDataSource
+        CategoriesDataSource.shared = categoriesDataSource
+        
         if let windowScene = scene as? UIWindowScene {
             window = UIWindow(windowScene: windowScene)
-            window?.rootViewController = HomeController()
+            
+            window?.rootViewController = TabBarController()
             window?.makeKeyAndVisible()
         }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+        
+        UserDefaults.standard.setValue(locValue.latitude, forKey: "user.currentlocation.latitude")
+        UserDefaults.standard.setValue(locValue.longitude, forKey: "user.currentlocation.longitude")
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -52,7 +77,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
-
-
 }
 

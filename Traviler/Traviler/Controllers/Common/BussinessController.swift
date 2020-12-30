@@ -13,7 +13,7 @@ class BusinessController: UIViewController {
     
     override func loadView() {
         let bunsinessView = BusinessView()
-        bunsinessView.busniess = business
+        bunsinessView.business = business
         bunsinessView.delegate = self
         
         self.view = bunsinessView
@@ -23,7 +23,6 @@ class BusinessController: UIViewController {
 
 extension BusinessController: BusinessViewDelegate {
     func handleOptionButtonTapped(_ sender: UIButton) {
-        // options
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         if BusinessDataStore.shared?.dumpData["favourits"] == nil {
@@ -48,7 +47,6 @@ extension BusinessController: BusinessViewDelegate {
             favouritsAlertTitle = "Add to Favourits"
         }
         
-        // add to favourit
         let addToFavouritAction = UIAlertAction(title: favouritsAlertTitle, style: favouritsAlertStyle) {
             _ in
             if inFavourits! {
@@ -72,7 +70,6 @@ extension BusinessController: BusinessViewDelegate {
             visitsListAlertTitle = "Add to Visits List"
         }
         
-        // add to visits list
         let addToVisitListAction = UIAlertAction(title: visitsListAlertTitle, style: visitsListAlertStyle) {
             _ in
             if inVistisList! {

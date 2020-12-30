@@ -26,10 +26,6 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         let discoverBarItem = UITabBarItem(title: String(), image: UIImage(systemName: "magnifyingglass"), selectedImage: UIImage(systemName: "magnifyingglass"))
         discoverTab.tabBarItem = discoverBarItem
         
-//        let favouritsController = ListController()
-//        favouritsController.dataSource = BusinessDataStore.shared?.dumpData["favourits"] ?? []
-//        favouritsController.listTitle = "Favouries"
-        
         let favouritTab = UINavigationController(rootViewController: FavouritesController())
         let favouritBarItem = UITabBarItem(title: String(), image: UIImage(systemName: "star"), selectedImage: UIImage(systemName: "star.fill"))
         favouritTab.tabBarItem = favouritBarItem

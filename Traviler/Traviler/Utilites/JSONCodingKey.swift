@@ -1,6 +1,6 @@
 //
 //  JSONCodingKey.swift
-//  SpotifyClone
+//  Traviler
 //
 //  Created by Mohammed Iskandar on 12/12/2020.
 //
