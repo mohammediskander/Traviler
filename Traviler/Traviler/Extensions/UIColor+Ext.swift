@@ -51,8 +51,8 @@ extension UIColor {
         return nil
     }
     
-    
-    /// Lighten the `color` in the gray-scale by the given precentage. for example, if we pass `UIColor.black` as the first argument, and we lighten it by `100` precent, we should get: `#FFFFFF` (`white` color).
+    ///  Lighten the `color` in the gray-scale by the given precentage.
+    /// For example, if you pass `UIColor.black` as the first argument, and lighten it by `100` precent, you should get: `#FFFFFF` (`white` color).
     /// - Parameters:
     ///   - color: The `UIColor` to lighten
     ///   - percentage: The precentage to lighten the color with
@@ -61,7 +61,8 @@ extension UIColor {
         return UIColor.adjust(color, by: abs(percentage))
     }
     
-    /// Darken the `color` in the gray-scale by the given precentage. for example, if we pass `UIColor.white` as the first argument, and we darken it by `100` precent, we should get: `#000000` (`black` color).
+    
+    /// Darken the `color` in the gray-scale by the given precentage. for example, if you pass `UIColor.white` as the first argument, and darken it by `100` precent, you should get: `#000000` (`black` color).
     /// - Parameters:
     ///   - color: The `UIColor` to darken
     ///   - percentage: The precentage to darken the color with
@@ -85,6 +86,7 @@ extension UIColor {
     final func lighten(by percentage: CGFloat = 30.0) -> UIColor? {
         return UIColor.adjust(self, by: percentage)
     }
+    
     
     final func darken(by percentage: CGFloat = 30.0) -> UIColor? {
         return UIColor.adjust(self, by: -1 * percentage)
