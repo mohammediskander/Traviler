@@ -15,17 +15,46 @@ class HomeCollectionController: UIViewController {
     private static var headerKind = "headerKind"
     private static var footerKind = "footerKind"
     
+    var businessDataSource = BusinessDataStore.shared!
+    var categoriesDataSource = CategoriesDataSource.shared!
     
     override func loadView() {
+        BusinessDataStore.shared = self.businessDataSource
         let homeCollectionView = HomeCollectionView()
         self.view = homeCollectionView
         
         self.collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: self.createLayout())
         homeCollectionView.collectionView = self.collectionView
         
+        collectionView.register(HomeLargeCell.self, forCellWithReuseIdentifier: CellIdentifiers.largeCell.rawValue)
+        collectionView.register(HomeRegularCell.self, forCellWithReuseIdentifier: CellIdentifiers.regularCell.rawValue)
+        
+        collectionView.register(
+            HomeTextHeader.self,
+            forSupplementaryViewOfKind: HomeCollectionController.headerKind,
+            withReuseIdentifier: HeaderIdentifier.text.rawValue
+        )
+        
+        collectionView.register(
+            HomeTextFieldHeader.self,
+            forSupplementaryViewOfKind: HomeCollectionController.headerKind,
+            withReuseIdentifier: HeaderIdentifier.textfield.rawValue
+        )
+        
+        collectionView.register(
+            HomeTextFieldHeader.self,
+            forSupplementaryViewOfKind: HomeCollectionController.footerKind,
+            withReuseIdentifier: HeaderIdentifier.textfield.rawValue
+        )
+        
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        
         collectionView.showsVerticalScrollIndicator = false
         collectionView.showsHorizontalScrollIndicator = false
         
+        businessDataSource.delegate = self
+        categoriesDataSource.delegate = self
     }
     
     func createLayout() -> UICollectionViewLayout {
@@ -33,7 +62,7 @@ class HomeCollectionController: UIViewController {
             (section, environment) -> NSCollectionLayoutSection in
             
             switch section {
-            case 0: 
+            case 0:
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
                 item.contentInsets.bottom = 5
@@ -78,5 +107,11 @@ class HomeCollectionController: UIViewController {
             }
             
         }
+    }
+}
+
+extension HomeCollectionController: DataSourceDelegate {
+    func handleDataSource<T>(_ data: [T], didUpdatFrom oldValue: [T]?) {
+        self.collectionView.reloadData()
     }
 }
